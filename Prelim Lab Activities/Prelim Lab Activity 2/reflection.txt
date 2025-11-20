@@ -1,0 +1,1 @@
+Using Angular’s component-based structure made development far more organized and efficient. Instead of managing large, tangled files, I worked with self-contained components that handled their own logic, template, and styles. This modularity improved reusability, simplified debugging, and made collaboration easier since different parts of the app were clearly separated.
