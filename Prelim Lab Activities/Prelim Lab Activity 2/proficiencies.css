@@ -1,0 +1,26 @@
+.tech-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tech-category {
+  background-color: #b6daff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border-left: 4px solid #000986;
+}
+
+.category-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.tech-items {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
