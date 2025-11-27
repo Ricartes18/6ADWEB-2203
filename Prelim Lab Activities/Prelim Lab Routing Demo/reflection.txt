@@ -1,0 +1,5 @@
+Using an array of objects makes it easier because all the related info for each student is grouped together, so I don’t have to manage separate lists and I can just loop through one structure.
+
+Keeping stud_name, course, and isActive inside the same object makes sense since they all describe one student, and it avoids mixing up data between different students.
+
+If this were a real system, I’d add things like a student ID, email, grades, and year level so the system can track them more accurately and give a complete profile.
