@@ -1,0 +1,44 @@
+/* General page styling */
+div {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+/* Headings */
+h1 {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+h3, h4, h5, h6 {
+  color: #34495e;
+  margin: 5px 0;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Code-like blocks */
+pre {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  overflow-x: auto;
+}
+
+/* Highlight alternating sections */
+div:nth-child(even) {
+  background-color: #eef6fb;
+}

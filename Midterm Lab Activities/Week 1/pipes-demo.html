@@ -1,0 +1,69 @@
+
+
+<div>
+  <h1>Date Pipes</h1>
+  Current date is :- {{presentDate | date}} <br>
+  short date: {{presentDate | date:'shortDate'}} <br>
+  full date: {{presentDate | date:'fullDate'}} <br>
+  formatted date: {{presentDate | date:'M/dd/yyyy'}} <br>
+  hours and minutes: {{presentDate | date:'h:mm'}} <br>
+</div>
+
+<div>
+  Date with UPPERCASE: {{presentDate | date:'fullDate' | uppercase}} <br>
+  Date with lowercase: {{presentDate | date:'medium' | lowercase}} <br>
+</div>
+
+<div>
+  <h1>Async Pipes</h1>
+  Seconds changing in Time: {{time$ | async | date:'mediumTime'}}
+</div>
+<hr>
+<div>
+  <h1>Currency Pipes</h1>
+
+  <p>{{price | currency:'':true}}</p>
+  <p>{{price | currency:'PHP'}}</p>
+</div>
+
+<hr>
+
+<div>
+  <h1>Slice Pipes</h1>
+  <h3>Start index: {{Fruits | slice:2}}</h3>
+  <h4>Start and end index: {{Fruits | slice:1:4}}</h4>
+  <h5>Negative index: {{Fruits | slice:-2}}</h5>
+  <h6>Negative start and end index: {{Fruits | slice:-4:-2}}</h6>
+</div>
+
+<div>
+  <h1>Decimal Pipes</h1>
+  <p>{{ decimalNum1 | number }}</p>
+  <p>{{ decimalNum2 | number }}</p>
+
+  <p>{{ decimalNum1 | number:'3.1' }}</p>
+  <p>{{ decimalNum1 | number:'2.1-4' }}</p>
+</div>
+
+<div>
+  <h1>Percent Pipes</h1>
+  <p>Transforms a number to a percentage string, formatted according to locale rules that determine group sizing and separator, decimal-point character, and other locale-specific configurations.</p>
+  <p>{{ percent1 | percent }}</p>
+  <p>{{ percent2 | percent:"4.3"}}</p>
+</div>
+
+<div>
+  <h1>Title Case Pipes</h1>
+  <p>Transforms text to title case. Capitalizes the first letter of each word and transforms the rest of the word to lower case. </p>
+  <p>mIxeD CasE turns into {{"mIxeD CasE" | titlecase}}</p>
+</div>
+
+<div>
+  <h1>JSON Pipe</h1>
+  <p>Converts a value into its JSON-format representation. Useful for debugging.</p>
+  <p>Without JSON pipe</p>
+  <pre>{{object}}</pre>
+
+  <p>With JSON pipe</p>
+  <pre>{{object | json}}</pre>
+</div>
