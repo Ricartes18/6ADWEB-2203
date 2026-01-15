@@ -1,0 +1,1 @@
+Working on this activity gave me a deeper understanding of Angular’s built in pipes and how they transform data directly in templates. By experimenting with different pipes—such as date, currency, slice, async, and JSON. I saw how powerful they are for formatting values without extra logic in the component. Overall, the exercise reinforced how Angular pipes handle presentation.
