@@ -1,0 +1,41 @@
+nav {
+  display: flex;
+  justify-content: space-between; /* title left, links center, date right */
+  align-items: center;
+  background-color: #1e3a8a;       /* deep blue background */
+  padding: 0.75rem 1.5rem;
+  color: #f0f9ff;
+  font-family: Arial, sans-serif;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f0f9ff;
+  margin: 0;
+}
+
+.nav-links {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.nav-links a {
+  color: #f0f9ff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #93c5fd;                  /* lighter blue on hover */
+  border-bottom: 2px solid #93c5fd;
+}
+
+.nav-date {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #bfdbfe;                  /* softer blue for date */
+}

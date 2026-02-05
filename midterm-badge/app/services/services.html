@@ -1,0 +1,21 @@
+<section>
+  <h2>All Records</h2>
+
+  <input
+    type="text"
+    placeholder="Search by title or body..."
+    (input)="onSearch($event.target.value)"
+  />
+
+  <div *ngIf="loading">Loading posts...</div>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <ul>
+    <li *ngFor="let post of filteredPosts$ | async">
+      <strong>{{ post.id }}</strong>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}...</p>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,14 @@
+<nav>
+  <h1 class="nav-title">Community Help Desk</h1>
+
+  <div class="nav-links">
+    <a routerLink="/">Home</a> |
+    <a routerLink="/about">About</a> |
+    <a routerLink="/services">Services</a> |
+    <a routerLink="/contact">Contact</a>
+  </div>
+
+  <p class="nav-date">{{ today | date:'fullDate' }}</p>
+</nav>
+
+<router-outlet />

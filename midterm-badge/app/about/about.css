@@ -1,0 +1,31 @@
+section {
+  max-width: 800px;
+  margin: 2rem auto;              /* center the section */
+  padding: 2rem;
+  background-color: #f0f9ff;      /* light blue background */
+  border: 1px solid #93c5fd;      /* subtle blue border */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(30, 58, 138, 0.15); /* soft blue shadow */
+  font-family: Arial, sans-serif;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1e3a8a;                 /* deep blue heading */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;                 /* neutral dark gray text */
+  margin-bottom: 1rem;
+}
+
+section p:last-child {
+  font-style: italic;
+  color: #1e40af;                 /* darker blue for date/time */
+  text-align: right;
+}

@@ -1,0 +1,13 @@
+<h1>Welcome to the Community Help Desk!</h1>
+
+<h2>Latest Posts</h2>
+
+<ul>
+  <li *ngFor="let post of latestPosts$ | async">
+    <!-- Use your custom TitleCaseWordsPipe -->
+    <strong>{{ post.title | titleCaseWords }}</strong>
+
+    <!-- Built-in slice pipe for preview -->
+    <p>Snippet: {{ post.body | slice:0:30 }}...</p>
+  </li>
+</ul>
