@@ -1,0 +1,49 @@
+<div class="card">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input class="input" type="text" placeholder="Username" formControlName="username"/>
+    @if (isInvalid('username')) {
+      <small class="error">Username: 4-12 chars (letters/numbers/_)</small>
+    }
+
+    <input class="input" type="email" placeholder="Email" formControlName="email"/>
+    @if (isInvalid('email')) {
+      <small class="error">Username: 4-12 chars (letters/numbers/_)</small>
+    }
+
+    <input class="input" type="password" placeholder="Password" formControlName="password"/>
+    @if (isInvalid('password')) {
+      <small class="error">Password: 8+ with upper, lower, number</small>
+    }
+
+    <select class="input" formControlName="role">
+      @for (r of roles; track r) {
+        <option [value]="r">{{ r }}</option>
+      }
+    </select>
+
+    <div>
+      <label>Gender:</label>
+      <label>
+        <input type="radio" formControlName="gender" value="male"> Male</label>
+      <label>
+        <input type="radio" formControlName="gender" value="female"> Female</label>
+      <label>
+        <input type="radio" formControlName="gender" value="other"> Other</label>
+    </div>
+
+    <div>
+      <label>Employment Type:</label>
+      <label>
+        <input type="radio" formControlName="employmentType" value="fulltime"> Full-time</label>
+      <label>
+        <input type="radio" formControlName="employmentType" value="parttime"> Part-time</label>
+    </div>
+
+    <textarea class="input" placeholder="Enter comments" formControlName="comments"></textarea>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
+
+@if (submittedData) { <div class="card"> <h3>Submitted Data</h3> <p><strong>Username:</strong> {{ submittedData.username }}</p> <p><strong>Email:</strong> {{ submittedData.email }}</p> <p><strong>Password:</strong> {{ submittedData.password }}</p> <p><strong>Role:</strong> {{ submittedData.role }}</p> <p><strong>Gender:</strong> {{ submittedData.gender }}</p> <p><strong>Employment Type:</strong> {{ submittedData.employmentType }}</p> <p><strong>Comments:</strong> {{ submittedData.comments }}</p> </div> }

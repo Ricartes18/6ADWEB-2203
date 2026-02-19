@@ -1,0 +1,56 @@
+<div class="card">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <!-- Emoji Mood Picker -->
+    <div>
+      <label>How are you feeling?</label>
+      <div class="radio-group">
+        <label><input type="radio" formControlName="mood" value="😊"> 😊 Happy</label>
+        <label><input type="radio" formControlName="mood" value="😐"> 😐 Neutral</label>
+        <label><input type="radio" formControlName="mood" value="😢"> 😢 Sad</label>
+        <label><input type="radio" formControlName="mood" value="😡"> 😡 Angry</label> </div> </div>
+
+    <!-- Energy Level Slider -->
+    <div>
+      <label>Energy Level: {{ form.value.energy }}</label>
+      <input type="range" min="0" max="10" formControlName="energy"/>
+    </div>
+
+    <!-- Stress Level Slider -->
+    <div>
+      <label>Stress Level: {{ form.value.stress }}</label>
+      <input type="range" min="0" max="10" formControlName="stress"/>
+    </div>
+
+    <!-- Reflection -->
+    <textarea class="input" placeholder="What influenced your mood today?" formControlName="reflection"></textarea>
+    @if (isInvalid('reflection')) {
+      <small class="error">Minimum length 5 & Maximum length 200</small>
+    }
+
+    <!-- Tomorrow Outlook -->
+    <div>
+      <label>Tomorrow’s Outlook:</label>
+      <div class="radio-group">
+        <label><input type="radio" formControlName="outlook" value="better"> Better</label>
+        <label><input type="radio" formControlName="outlook" value="same"> Same</label>
+        <label><input type="radio" formControlName="outlook" value="worse"> Worse</label>
+      </div>
+    </div>
+
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Track Mood</button>
+  </form>
+</div>
+
+<!-- Display submitted data -->
+@if (submittedData) {
+  <div class="card">
+    <h3>Today’s Mood Entry</h3>
+    <p><strong>Mood:</strong> {{ submittedData.mood }}</p>
+    <p><strong>Energy Level:</strong> {{ submittedData.energy }}</p>
+    <p><strong>Stress Level:</strong> {{ submittedData.stress }}</p>
+    <p><strong>Reflection:</strong> {{ submittedData.reflection }}</p>
+    <p><strong>Tomorrow Outlook:</strong> {{ submittedData.outlook }}</p>
+  </div>
+}

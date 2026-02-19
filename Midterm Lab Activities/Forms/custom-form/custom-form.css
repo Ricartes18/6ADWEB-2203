@@ -1,0 +1,84 @@
+/* Card container */
+.card {
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f0f8ff; /* light blue */
+  border: 1px solid #0077cc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Inputs and textarea */
+.input, textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #0077cc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Radio groups */
+.card div label {
+  margin-right: 15px;
+  font-weight: normal;
+  color: #004080;
+}
+
+/* Radio groups container */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  color: #004080;
+}
+
+/* Sliders */
+input[type="range"] {
+  width: 100%;
+  margin: 8px 0;
+  accent-color: #0077cc; /* modern browsers */
+}
+
+/* Error messages */
+.error {
+  color: #cc0000;
+  font-size: 12px;
+  margin-top: -6px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:disabled {
+  background-color: #99ccee;
+  cursor: not-allowed;
+}
+
+.btn:hover:enabled {
+  background-color: #005fa3;
+}
+
+
