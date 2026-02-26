@@ -1,0 +1,73 @@
+/* Card container */
+.card {
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f0f8ff; /* light blue background */
+  border: 1px solid #0077cc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Radio groups container */
+.card div {
+  margin-bottom: 12px; /* space below each group */
+}
+
+/* Radio labels spacing */
+.card div label {
+  margin-right: 20px; /* gap between radio options */
+  font-weight: normal;
+  color: #004080;
+}
+
+
+/* Inputs, select, textarea */
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #0077cc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Radio groups */
+.card div label {
+  margin-right: 15px;
+  font-weight: normal;
+  color: #004080;
+}
+
+/* Error messages */
+.error {
+  color: #cc0000;
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0077cc; /* primary blue */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:disabled {
+  background-color: #99ccee; /* lighter blue when disabled */
+  cursor: not-allowed;
+}
+
+.btn:hover:enabled {
+  background-color: #005fa3; /* darker blue on hover */
+}
