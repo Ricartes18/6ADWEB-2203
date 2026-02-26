@@ -1,0 +1,96 @@
+<div class="form-container" [ngClass]="darkMode ? 'dark-theme' : 'light-theme'">
+  <h1>University Admission Form</h1>
+  <form [formGroup]="formdata" (ngSubmit)="onSubmit()">
+
+    <!-- Full Name -->
+    <mat-form-field appearance="fill">
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="fullName" placeholder="Enter your name">
+    </mat-form-field>
+
+    <!-- Email -->
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="Enter Email">
+      <mat-error *ngIf="formdata.get('email')?.invalid && formdata.get('email')?.touched">
+         Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Password -->
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" placeholder="Enter Password">
+      <mat-error *ngIf="formdata.get('password')?.invalid && formdata.get('password')?.touched">
+         Must start with a letter, alphanumeric, min 8 chars
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Program Selection (mat-select) -->
+    <mat-form-field appearance="fill">
+      <mat-label>Program</mat-label>
+      <mat-select formControlName="program">
+        <mat-option value="cs">Computer Science</mat-option>
+        <mat-option value="eng">Engineering</mat-option>
+        <mat-option value="bus">Business Administration</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Gender (mat-radio-group) -->
+    <div class="radio-group">
+      <label class="radio-label">Gender</label>
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="other">Other</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <!-- Expansion Panel for Additional Info -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Additional Information</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-form-field appearance="fill">
+        <mat-label>High School</mat-label>
+        <input matInput formControlName="highSchool" placeholder="Enter your high school">
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate" placeholder="Select DOB">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+
+      </mat-datepicker-toggle> <mat-datepicker #picker></mat-datepicker> @if (formdata.get('birthDate')?.hasError('invalidYear')){
+        <mat-error>
+          Only applicants born in 2006 or earlier are allowed
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <!-- Progress Bar -->
+    <mat-progress-bar mode="determinate" [value]="formProgress"></mat-progress-bar>
+
+    <!-- Dark Mode Toggle -->
+    <mat-slide-toggle formControlName="darkMode" (change)="toggleTheme()">
+       Dark Mode
+    </mat-slide-toggle>
+
+    <!-- Submit -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="!formdata.valid">
+       Apply Now
+    </button>
+    @if (submitted) {
+      <p>
+        You have entered: <br>
+        Full Name: {{ formdata.value.fullName }} <br>
+        Email: {{ formdata.value.email }} <br>
+        Password: {{ formdata.value.password }} <br>
+        Gender: {{ formdata.value.gender }} <br>
+        High School: {{ formdata.value.highSchool }} <br>
+        Birth Date: {{ formdata.value.birthDate | date:'shortDate' }} <br>
+        Program: {{ formdata.value.program }} <br>
+        Dark Mode: {{ formdata.value.darkMode }} <br> </p> }
+  </form>
+</div>
