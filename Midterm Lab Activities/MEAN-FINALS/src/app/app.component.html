@@ -1,0 +1,71 @@
+<h1 class="app-heading"> Books Application</h1>
+
+<form>
+  <label for="newBook">Title</label>
+  <input id="newBook" placeholder="Enter book title">
+
+  <label for="newDesc">Description</label>
+  <input id="newDesc" placeholder="Enter description">
+
+  <label for="newPrice">Price</label>
+  <input id="newPrice" placeholder="Enter price">
+
+  <label for="newAuthor">Author</label>
+  <input id="newAuthor" placeholder="Enter author">
+
+  <label for="newYear">Published Year</label>
+  <input id="newYear" placeholder="Enter year">
+
+  <button (click)="addBook()">Add Book</button>
+</form>
+
+<div class="book-list">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (book of books; track book.id) {
+        @if (editingId !== book.id) {
+          <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.desc }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.year }}</td>
+            <td>
+              <button (click)="startEdit(book)">Edit</button>
+              <button (click)="deleteBook(book.id)">Delete</button>
+            </td>
+          </tr>
+        } @else {
+          <tr>
+            <td><input [(ngModel)]="editBookData.title" /></td>
+            <td><input [(ngModel)]="editBookData.desc" /></td>
+            <td><input [(ngModel)]="editBookData.price" type="number" /></td>
+            <td><input [(ngModel)]="editBookData.author" /></td>
+            <td><input [(ngModel)]="editBookData.year" type="number" /></td>
+            <td>
+              <button (click)="saveEdit()">Save</button>
+              <button (click)="cancelEdit()">Cancel</button>
+            </td>
+          </tr>
+        }
+      } @empty {
+        <tr>
+          <td colspan="6" style="text-align:center; font-style:italic; color:#666;">
+            No books available
+          </td>
+        </tr>
+      }
+
+    </tbody>
+  </table>
+</div>
